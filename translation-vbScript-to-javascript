@@ -1,0 +1,68 @@
+//------------------------------part 1 ----------------------------------//
+
+function CheckForm() {
+
+	var checkForm = true; 
+	var var_Comment = document.getElementById('txt_Comment').value;
+	var ComentTrimp = var_Comment.trim();
+
+	if (ComentTrimp.length > 0)
+	{
+		this.form.elements["AddComment"].value = 'Yes';
+		window.open("test.asp");
+    }
+    else
+    {
+		if(this.form.elements["txtPrev"].value == 'NO')
+		{
+		    alert("You have not entered a comment") 
+		    checkForm = false;
+		} 
+	}
+}
+
+//------------------------------part 2 ----------------------------------//
+
+var value1;
+value1 = value1.toFixed(4).toString();
+
+//------------------------------part 3----------------------------------//
+
+
+var Value = 'abc12344345';
+switch (Mode) {
+
+    case 1:
+          Value = Value.replace(".", "");
+          if (Value.length >= 2 && !isNaN(Value))
+          	{ 	
+				test1(); //call function test 1
+			} 
+          break;
+    case 2:
+			Value = Value.replace(".", "");
+			if (Value.length >= 4 && !isNaN(Value)){ 	
+                test2(); //call function test 2
+			} 
+           break;
+    case 3:
+			if (!isNaN(Value))
+			{ 
+				PassValue = '00000000' + Value;
+                PassValue = PassValue.substr(PassValue.length - 9); 
+                test3(); //call function test 3
+            }
+            else if (Value.trim().length == 0 ) 
+		    {
+				Value = "000000000"			 
+				test3(); //call function test 3
+			}
+        break;
+
+    case 4:
+			PassValue = '00000' + Value;
+			PassValue = PassValue.substr(PassValue.length - 5); 
+			test4(); //call function test 1                 
+			break;
+
+}
